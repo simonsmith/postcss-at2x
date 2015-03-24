@@ -1,0 +1,18 @@
+.logo {
+  background: red url('/public/images/logo.png') at-2x;
+}
+
+.banner {
+  background-image: url('/public/images/banner.png') at-2x;
+  background-size: cover;
+}
+
+.background {
+  background-image: url('/public/images/background.png');
+}
+
+@media (min-width: 200px), (max-width: 400px) {
+  .logo {
+    background-image: url('/public/images/logo-mediaquery.png') at-2x;
+  }
+}
