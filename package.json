@@ -1,7 +1,7 @@
 {
     "name": "postcss-at2x",
-    "version": "0.0.0",
-    "description": "PostCSS plugin Adds at-2x keyword to background and background-image declarations to add retina support for images.",
+    "version": "0.1.0",
+    "description": "Adds at-2x keyword to background and background-image declarations to add retina support for images.",
     "keywords": ["postcss", "css", "postcssplugin", "at2x", "retina"],
     "author": "Simon Smith <me@simonsmith.io>",
     "license": "MIT",
