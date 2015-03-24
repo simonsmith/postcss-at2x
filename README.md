@@ -2,15 +2,40 @@
 
 Ported from [rework-plugin-at2x](https://github.com/reworkcss/rework-plugin-at2x)
 
-### .at2x()
+## Installation
+
+```console
+$ npm install postcss-at2x --save-dev
+```
+
+## Usage
+
+```js
+var fs = require('fs');
+var postcss = require('postcss');
+var at2x = require('postcss-at2x');
+
+var css = fs.readFileSync('input.css', 'utf8');
+
+var output = postcss()
+  .use(at2x())
+  .process(css)
+  .css;
+```
+
+## .at2x()
 
 Adds `at-2x` keyword to `background` and `background-image` declarations to add retina support for images.
+
+**Input**
 
 ```css
 .logo {
   background: red url('/public/images/logo.png') no-repeat 0 0 at-2x;
 }
 ```
+
+**Output**
 
 ```css
 .logo {
@@ -29,12 +54,5 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
 * Supports multiple background images and `background` shorthand with properties. See `test/fixtures/at2x.css` for examples.
 
 * Ignores background-size. This should be set on the original declaration and is then inherited.
-
-## Usage
-
-```js
-var at2x = require('postcss-at2x');
-postcss([at2x]);
-```
 
 See [PostCSS](https://github.com/postcss/postcss/) docs for examples for your environment.
