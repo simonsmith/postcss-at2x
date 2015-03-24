@@ -53,6 +53,7 @@ function combineMediaQuery(base, additional) {
 }
 
 function parseUrl(decl) {
+  // Strip out `at-2x`
   var val = decl.value.replace(/\s+(at-2x)\s*(;|$)/, '$2');
   decl.value = val;
 
@@ -70,9 +71,7 @@ function parseUrl(decl) {
 
   // Replace all instances of `url(a/path/test.png)` with `url(a/path/test@2x.png)`.
   // This preserves other values set by background such as no-repeat, color etc
-  return val.replace(/url\((.*?)\)/g, function(match) {
-    return 'url(' + retinaUrl + ')';
-  });
+  return val.replace(/url\((.*?)\)/g, 'url(' + retinaUrl + ')');
 }
 
 function backgroundWithHiResURL(decl) {
