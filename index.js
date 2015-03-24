@@ -70,7 +70,7 @@ function parseUrl(decl) {
 
   // Replace all instances of `url(a/path/test.png)` with `url(a/path/test@2x.png)`.
   // This preserves other values set by background such as no-repeat, color etc
-  return val.replace(/url\([^\)]+\)/g, function(match) {
+  return val.replace(/url\((.*?)\)/g, function(match) {
     return 'url(' + retinaUrl + ')';
   });
 }
