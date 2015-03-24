@@ -1,18 +1,38 @@
+/**
+ * Multiple background values being set at once
+ */
 .logo {
-  background: red url('/public/images/logo.png') at-2x;
+  background: red url('/public/images/logo.png') no-repeat 0 0 at-2x;
 }
 
+/**
+ * Multiple backgrounds
+ */
 .banner {
-  background-image: url('/public/images/banner.png') at-2x;
-  background-size: cover;
+  background: url(http://demos.hacks.mozilla.org/openweb/resources/images/logos/firefox-48.png),
+        linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
+        url(http://demos.hacks.mozilla.org/openweb/resources/images/patterns/flowers-pattern.jpg) at-2x;
 }
 
-.background {
-  background-image: url('/public/images/background.png');
+/**
+ * Just an image
+ */
+.user {
+  background-image: url('/public/images/site.png') at-2x;
 }
 
+/**
+ * Ignoring declarations without at-2x
+ */
+.avatar {
+  background-image: url('/public/images/site.png');
+}
+
+/**
+ * Retina scoped to media query
+ */
 @media (min-width: 200px), (max-width: 400px) {
   .logo {
-    background-image: url('/public/images/logo-mediaquery.png') at-2x;
+    background-image: url('/public/images/logo.png') at-2x;
   }
 }

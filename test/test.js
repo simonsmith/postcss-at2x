@@ -5,7 +5,7 @@ var fs = require('fs');
 var plugin = require('../');
 
 var test = function (input, output, opts) {
-  return postcss(plugin(opts)).process(input).css;
+  expect(postcss(plugin(opts)).process(input).css).to.eql(output);
 };
 
 describe('postcss-at2x', function () {

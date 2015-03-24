@@ -1,34 +1,58 @@
+/**
+ * Multiple background values being set at once
+ */
 .logo {
-  background-image: url('/public/images/logo.png');
+  background: red url('/public/images/logo.png') no-repeat 0 0;
 }
 
+/**
+ * Multiple backgrounds
+ */
 .banner {
-  background-image: url('/public/images/banner.png');
-  background-size: cover;
+  background: url(http://demos.hacks.mozilla.org/openweb/resources/images/logos/firefox-48.png),
+        linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
+        url(http://demos.hacks.mozilla.org/openweb/resources/images/patterns/flowers-pattern.jpg);
 }
 
-.background {
-  background-image: url('/public/images/background.png');
+/**
+ * Just an image
+ */
+.user {
+  background-image: url('/public/images/site.png');
 }
 
+/**
+ * Ignoring declarations without at-2x
+ */
+.avatar {
+  background-image: url('/public/images/site.png');
+}
+
+/**
+ * Retina scoped to media query
+ */
 @media (min-width: 200px), (max-width: 400px) {
   .logo {
     background-image: url('/public/images/logo.png');
   }
 }
-
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .logo {
-    background-image: url('/public/images/logo@2x.png');
+    background: red url('/public/images/logo@2x.png') no-repeat 0 0;
   }
 }
-
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .banner {
-    background-image: url('/public/images/banner@2x.png');
+    background: url(http:/demos.hacks.mozilla.org/openweb/resources/images/logos/firefox-48@2x.png),
+        linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
+        url(http:/demos.hacks.mozilla.org/openweb/resources/images/logos/firefox-48@2x.png);
   }
 }
-
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .user {
+    background-image: url('/public/images/site@2x.png');
+  }
+}
 @media (min-width: 200px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 200px) and (-o-min-device-pixel-ratio: 3/2), (min-width: 200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-resolution: 144dpi), (min-width: 200px) and (min-resolution: 1.5dppx), (max-width: 400px) and (min--moz-device-pixel-ratio: 1.5), (max-width: 400px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 400px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 400px) and (min-device-pixel-ratio: 1.5), (max-width: 400px) and (min-resolution: 144dpi), (max-width: 400px) and (min-resolution: 1.5dppx) {
   .logo {
     background-image: url('/public/images/logo@2x.png');
