@@ -1,4 +1,4 @@
-var path = require('path');
+var path    = require('path');
 var postcss = require('postcss');
 
 var query = [
@@ -30,12 +30,9 @@ function at2x(opts) {
 
       rule.append(postcss.decl({
         prop: decl.prop,
-        value: 'url(' + parseUrl(decl) + ')'
+        value: parseUrl(decl)
       }));
-      rule.append(postcss.decl({
-        prop: 'background-size',
-        value: 'contain'
-      }));
+
       media.append(rule);
       root.append(media);
     });
@@ -58,6 +55,7 @@ function combineMediaQuery(base, additional) {
 function parseUrl(decl) {
   var val = decl.value.replace(/\s+(at-2x)\s*(;|$)/, '$2');
   decl.value = val;
+
   var i = val.indexOf('url(');
   var url = val.slice(i + 4, val.indexOf(')', i));
   var ext = path.extname(url);
@@ -67,8 +65,14 @@ function parseUrl(decl) {
     return;
   }
 
-  // @2x value
-  return path.join(path.dirname(url), path.basename(url, ext) + '@2x' + ext);
+  // @2x url value
+  var retinaUrl = path.join(path.dirname(url), path.basename(url, ext) + '@2x' + ext);
+
+  // Replace all instances of `url(a/path/test.png)` with `url(a/path/test@2x.png)`.
+  // This preserves other values set by background such as no-repeat, color etc
+  return val.replace(/url\([^\)]+\)/g, function(match) {
+    return 'url(' + retinaUrl + ')';
+  });
 }
 
 function backgroundWithHiResURL(decl) {
