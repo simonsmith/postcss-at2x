@@ -1,26 +1,32 @@
 {
-    "name": "postcss-at2x",
-    "version": "0.1.0",
-    "description": "Adds at-2x keyword to background and background-image declarations to add retina support for images.",
-    "keywords": ["postcss", "css", "postcssplugin", "at2x", "retina"],
-    "author": "Simon Smith <me@simonsmith.io>",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url":  "https://github.com/simonsmith/postcss-at2x.git"
-    },
-    "dependencies": {
-        "postcss": "^4.0.3"
-    },
-    "devDependencies": {
-        "jshint-stylish": "1.0.0",
-        "gulp-jshint":    "1.9.2",
-        "gulp-mocha":     "2.0.0",
-        "mocha":          "2.1.0",
-        "chai":           "1.10.0",
-        "gulp":           "3.8.11"
-    },
-    "scripts": {
-        "test": "gulp"
-    }
+  "name": "postcss-at2x",
+  "version": "0.1.1",
+  "description": "Adds at-2x keyword to background and background-image declarations to add retina support for images.",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcssplugin",
+    "at2x",
+    "retina"
+  ],
+  "author": "Simon Smith <me@simonsmith.io>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonsmith/postcss-at2x.git"
+  },
+  "dependencies": {
+    "postcss": "^4.0.6"
+  },
+  "devDependencies": {
+    "jshint-stylish": "1.0.1",
+    "gulp-jshint": "1.9.4",
+    "gulp-mocha": "2.0.0",
+    "mocha": "2.2.1",
+    "chai": "2.1.2",
+    "gulp": "3.8.11"
+  },
+  "scripts": {
+    "test": "gulp"
+  }
 }
