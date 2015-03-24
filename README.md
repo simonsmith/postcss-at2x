@@ -22,9 +22,9 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
 
 ### Differences from rework-at2x
 
-* Supports multiple background images and `background` shorthand with properties. See test/fixtures/at2x.css for examples.
+* Supports multiple background images and `background` shorthand with properties. See `test/fixtures/at2x.css` for examples.
 
-* Ignores background-size this should always be set on the original declaration and is inherited.
+* Ignores background-size. This should be set on the original declaration and is then inherited.
 
 ## Usage
 
