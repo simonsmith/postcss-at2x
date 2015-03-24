@@ -33,4 +33,4 @@ var at2x = require('postcss-at2x');
 postcss([at2x]);
 ```
 
-See [PostCSS] docs for examples for your environment.
+See [PostCSS](https://github.com/postcss/postcss/) docs for examples for your environment.
