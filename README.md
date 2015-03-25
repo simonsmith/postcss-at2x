@@ -53,6 +53,4 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
 
 * Supports multiple background images and `background` shorthand with properties. See `test/fixtures/at2x.css` for examples.
 
-* Ignores background-size. This should be set on the original declaration and is then inherited.
-
 See [PostCSS](https://github.com/postcss/postcss/) docs for examples for your environment.
