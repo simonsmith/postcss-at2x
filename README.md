@@ -23,7 +23,7 @@ var output = postcss()
   .css;
 ```
 
-## .at2x()
+### .at2x()
 
 Adds `at-2x` keyword to `background` and `background-image` declarations to add retina support for images.
 
@@ -49,7 +49,7 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
 }
 ```
 
-## Options
+### Options
 
 ##### `identifier` (default: `"@2x"`) _string_
 
