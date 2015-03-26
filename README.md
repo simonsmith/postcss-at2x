@@ -49,7 +49,13 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
 }
 ```
 
-### Differences from rework-at2x
+## Options
+
+### `identifier` (default: `"@2x"`) _string_
+
+Change the identifier added to retina images, for example `file@2x.png` can be `file-retina.png`.
+
+## Differences from rework-at2x
 
 * Supports multiple background images and `background` shorthand with properties. See `test/fixtures/at2x.css` for examples.
 

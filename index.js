@@ -14,6 +14,7 @@ module.exports = at2x;
 
 function at2x(opts) {
   opts = opts || {};
+  var identifier = opts.identifier !== undefined ? opts.identifier : '@2x';
 
   return function(root) {
     root.eachDecl(/^background/, function(decl) {
@@ -30,7 +31,7 @@ function at2x(opts) {
 
       rule.append(postcss.decl({
         prop: decl.prop,
-        value: parseUrl(decl)
+        value: parseUrl(decl, identifier)
       }));
 
       media.append(rule);
@@ -52,7 +53,7 @@ function combineMediaQuery(base, additional) {
   return finalQuery.join(', ');
 }
 
-function parseUrl(decl) {
+function parseUrl(decl, identifier) {
   // Strip out `at-2x`
   var val = decl.value.replace(/\s+(at-2x)\s*(;|$)/, '$2');
   decl.value = val;
@@ -67,7 +68,7 @@ function parseUrl(decl) {
   }
 
   // @2x url value
-  var retinaUrl = path.join(path.dirname(url), path.basename(url, ext) + '@2x' + ext);
+  var retinaUrl = path.join(path.dirname(url), path.basename(url, ext) + identifier + ext);
 
   // Replace all instances of `url(a/path/test.png)` with `url(a/path/test@2x.png)`.
   // This preserves other values set by background such as no-repeat, color etc
