@@ -51,7 +51,7 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
 
 ## Options
 
-### `identifier` (default: `"@2x"`) _string_
+##### `identifier` (default: `"@2x"`) _string_
 
 Change the identifier added to retina images, for example `file@2x.png` can be `file-retina.png`.
 
