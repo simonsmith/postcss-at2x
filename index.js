@@ -22,9 +22,9 @@ function at2x(opts) {
         return;
       }
 
-      var topLevelNode = decl.parent.parent;
-      var params = (topLevelNode.name === 'media') ?
-                 combineMediaQuery(topLevelNode.params.split(/,\s*/), query) :
+      var mediaParent = decl.parent.parent;
+      var params = (mediaParent.name === 'media') ?
+                 combineMediaQuery(mediaParent.params.split(/,\s*/), query) :
                  query.join(', ');
       var media = postcss.atRule({ name: 'media', params: params });
       var rule = postcss.rule({ selector: decl.parent.selector });
