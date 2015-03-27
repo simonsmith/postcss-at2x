@@ -17,25 +17,40 @@ function at2x(opts) {
   var identifier = opts.identifier !== undefined ? opts.identifier : '@2x';
 
   return function(root) {
-    root.eachDecl(/^background/, function(decl) {
-      if (!backgroundWithHiResURL(decl)) {
-        return;
-      }
-
-      var mediaParent = decl.parent.parent;
+    root.eachRule(function(rule) {
+      // Create an @media retina rule
+      var mediaParent = rule.parent;
       var params = (mediaParent.name === 'media') ?
                  combineMediaQuery(mediaParent.params.split(/,\s*/), query) :
                  query.join(', ');
       var media = postcss.atRule({ name: 'media', params: params });
-      var rule = postcss.rule({ selector: decl.parent.selector });
 
-      rule.append(postcss.decl({
-        prop: decl.prop,
-        value: parseUrl(decl, identifier)
-      }));
+      // Check for any `background-size` declarations. These need to be added
+      // again to prevent it being overriden by usage of the `background`
+      // shorthand
+      var backgroundSize;
+      rule.eachDecl('background-size', function(decl) {
+        backgroundSize = decl;
+      });
 
-      media.append(rule);
-      root.append(media);
+      rule.eachDecl(/^background/, function(decl) {
+        if (!backgroundWithHiResURL(decl)) {
+          return;
+        }
+
+        var rule = postcss.rule({ selector: decl.parent.selector });
+        rule.append(postcss.decl({
+          prop: decl.prop,
+          value: parseUrl(decl, identifier)
+        }));
+
+        if (backgroundSize) {
+          rule.append(postcss.decl(backgroundSize));
+        }
+
+        media.append(rule);
+        root.append(media);
+      });
     });
   };
 }

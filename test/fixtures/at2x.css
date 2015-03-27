@@ -3,6 +3,7 @@
  */
 .logo {
   background: red url('/public/images/logo.png') no-repeat 0 0 at-2x;
+  background-size: auto auto;
 }
 
 /**
