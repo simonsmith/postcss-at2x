@@ -10,7 +10,7 @@ var query = [
   '(min-resolution: 1.5dppx)'
 ];
 
-module.exports = at2x;
+module.exports = postcss.plugin('postcss-at2x', at2x);
 
 function at2x(opts) {
   opts = opts || {};

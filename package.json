@@ -16,14 +16,14 @@
     "url": "https://github.com/simonsmith/postcss-at2x.git"
   },
   "dependencies": {
-    "postcss": "^4.0.6"
+    "postcss": "^4.1.8"
   },
   "devDependencies": {
     "jshint-stylish": "1.0.1",
-    "gulp-jshint": "1.9.4",
-    "gulp-mocha": "2.0.0",
-    "mocha": "2.2.1",
-    "chai": "2.1.2",
+    "gulp-jshint": "1.10.0",
+    "gulp-mocha": "2.0.1",
+    "mocha": "2.2.4",
+    "chai": "2.3.0",
     "gulp": "3.8.11"
   },
   "scripts": {
