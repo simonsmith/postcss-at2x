@@ -1,5 +1,6 @@
 var path    = require('path');
 var postcss = require('postcss');
+var slash   = require('slash');
 
 var query = [
   '(min--moz-device-pixel-ratio: 1.5)',
@@ -84,6 +85,9 @@ function parseUrl(decl, identifier) {
 
   // @2x url value
   var retinaUrl = path.join(path.dirname(url), path.basename(url, ext) + identifier + ext);
+
+  // path.join uses backslash on windows, which breaks in CSS. Reverse that
+  retinaUrl = slash(retinaUrl);
 
   // Replace all instances of `url(a/path/test.png)` with `url(a/path/test@2x.png)`.
   // This preserves other values set by background such as no-repeat, color etc
