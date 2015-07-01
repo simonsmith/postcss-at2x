@@ -1,0 +1,13 @@
+/**
+ * Retina scoped to media query
+ */
+@media (min-width: 200px), (max-width: 400px) {
+  .scoped {
+    background-image: url('/public/images/logo.png');
+  }
+}
+@media (min-width: 200px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 200px) and (-o-min-device-pixel-ratio: 3/2), (min-width: 200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-device-pixel-ratio: 1.5), (min-width: 200px) and (min-resolution: 144dpi), (min-width: 200px) and (min-resolution: 1.5dppx), (max-width: 400px) and (min--moz-device-pixel-ratio: 1.5), (max-width: 400px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 400px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 400px) and (min-device-pixel-ratio: 1.5), (max-width: 400px) and (min-resolution: 144dpi), (max-width: 400px) and (min-resolution: 1.5dppx) {
+  .scoped {
+    background-image: url('/public/images/logo@2x.png');
+  }
+}

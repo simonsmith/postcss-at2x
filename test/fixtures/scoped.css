@@ -1,0 +1,8 @@
+/**
+ * Retina scoped to media query
+ */
+@media (min-width: 200px), (max-width: 400px) {
+  .scoped {
+    background-image: url('/public/images/logo.png') at-2x;
+  }
+}

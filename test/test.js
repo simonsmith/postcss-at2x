@@ -24,6 +24,10 @@ describe('postcss-at2x', () => {
     test('at2x.css', 'at2x.out.css', {}, done);
   });
 
+  it('should allow retina image scoped to media query', (done) => {
+    test('scoped.css', 'scoped.out.css', {}, done);
+  });
+
   it('should allow a custom identifier for retina file names', (done) => {
     test('identifier.css', 'identifier.out.css', { identifier: '-retina'}, done);
   });

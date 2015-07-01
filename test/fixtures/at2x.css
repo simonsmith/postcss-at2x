@@ -28,12 +28,3 @@
 .avatar {
   background-image: url('/public/images/site.png');
 }
-
-/**
- * Retina scoped to media query
- */
-@media (min-width: 200px), (max-width: 400px) {
-  .logo {
-    background-image: url('/public/images/logo.png') at-2x;
-  }
-}
