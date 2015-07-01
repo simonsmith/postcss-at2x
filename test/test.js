@@ -1,19 +1,30 @@
-var postcss = require('postcss');
-var expect  = require('chai').expect;
-var fs = require('fs');
+import postcss from 'postcss';
+import { expect } from 'chai';
+import plugin from '../lib/';
+import fs from 'fs';
+import path from 'path';
 
-var plugin = require('../');
+function readFixture(filename) {
+  return fs.readFileSync(path.join('test/fixtures', filename), 'utf-8');
+}
 
-var test = function (input, output, opts) {
-  expect(postcss(plugin(opts)).process(input).css).to.eql(output);
-};
+function test(input, output, opts, done) {
+  input = readFixture(`${input}`);
+  output = readFixture(`${output}`);
 
-describe('postcss-at2x', function () {
-  it('should add device-pixel-ratio rules', function () {
-    test(fs.readFileSync('test/fixtures/at2x.css', 'utf-8'), fs.readFileSync('test/fixtures/at2x.out.css', 'utf-8'));
+  postcss([ plugin(opts) ]).process(input).then((result) => {
+    expect(result.css).to.eql(output);
+    expect(result.warnings()).to.be.empty;
+    done();
+  }).catch(done);
+}
+
+describe('postcss-at2x', () => {
+  it('should add device-pixel-ratio rules', (done) => {
+    test('at2x.css', 'at2x.out.css', {}, done);
   });
 
-  it('should allow a custom identifier for retina file names', function () {
-    test(fs.readFileSync('test/fixtures/identifier.css', 'utf-8'), fs.readFileSync('test/fixtures/identifier.out.css', 'utf-8'), { identifier: '-retina'});
+  it('should allow a custom identifier for retina file names', (done) => {
+    test('identifier.css', 'identifier.out.css', { identifier: '-retina'}, done);
   });
 });
