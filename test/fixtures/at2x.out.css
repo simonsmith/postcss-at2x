@@ -10,9 +10,9 @@
  * Multiple backgrounds
  */
 .banner {
-  background: url(http://demos.hacks.mozilla.org/openweb/resources/images/logos/firefox-48.png),
-        linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
-        url(http://demos.hacks.mozilla.org/openweb/resources/images/patterns/flowers-pattern.jpg);
+  background: url(http://example.com/image.png),
+              url(/public/images/cool.png),
+              url(http://example.com/flowers-pattern.jpg);
 }
 
 /**
@@ -36,9 +36,9 @@
 }
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .banner {
-    background: url(http:/demos.hacks.mozilla.org/openweb/resources/images/logos/firefox-48@2x.png),
-        linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
-        url(http:/demos.hacks.mozilla.org/openweb/resources/images/logos/firefox-48@2x.png);
+    background: url(http://example.com/image.png),
+              url(/public/images/cool.png),
+              url(http://example.com/flowers-pattern@2x.jpg);
   }
 }
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {

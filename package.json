@@ -18,8 +18,7 @@
   "main": "build/index.js",
   "dependencies": {
     "object-assign": "^3.0.0",
-    "postcss": "^4.1.13",
-    "slash": "^1.0.0"
+    "postcss": "^4.1.13"
   },
   "devDependencies": {
     "babel": "^5.6.14",
