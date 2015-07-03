@@ -1,0 +1,27 @@
+.multi {
+  background: url(http://example.com/image.png),
+              url(/public/images/cool.png),
+              url(http://example.com/flowers-pattern.jpg);
+}
+
+.multi {
+  background-image: url(http://example.com/image.png),
+                    linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
+                    url(/public/images/cool.png);
+}
+
+
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .multi {
+    background: url(http://example.com/image.png),
+              url(/public/images/cool@2x.png),
+              url(http://example.com/flowers-pattern@2x.jpg);
+  }
+}
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .multi {
+    background-image: url(http://example.com/image.png),
+                      linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
+                      url(/public/images/cool@2x.png);
+  }
+}

@@ -31,4 +31,8 @@ describe('postcss-at2x', () => {
   it('should allow a custom identifier for retina file names', (done) => {
     test('identifier.css', 'identifier.out.css', { identifier: '-retina'}, done);
   });
+
+  it('should allow mulitple background images to be replaced', (done) => {
+    test('multibg.css', 'multibg.out.css', {}, done);
+  });
 });
