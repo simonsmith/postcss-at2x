@@ -7,15 +7,6 @@
 }
 
 /**
- * Multiple backgrounds
- */
-.banner {
-  background: url(http://example.com/image.png),
-              url(/public/images/cool.png),
-              url(http://example.com/flowers-pattern.jpg) at-2x;
-}
-
-/**
  * Just an image
  */
 .user {
