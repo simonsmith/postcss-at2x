@@ -6,3 +6,11 @@
     background-image: url('/public/images/logo.png') at-2x;
   }
 }
+
+.user {
+  background-image: url('/public/images/site.png') at-2x;
+}
+
+.test {
+  background-image: url('/public/images/site.png') at-2x;
+}

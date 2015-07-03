@@ -32,7 +32,7 @@ describe('postcss-at2x', () => {
     test('identifier.css', 'identifier.out.css', { identifier: '-retina'}, done);
   });
 
-  it('should allow mulitple background images to be replaced', (done) => {
+  xit('should allow mulitple background images to be replaced', (done) => {
     test('multibg.css', 'multibg.out.css', {}, done);
   });
 });
