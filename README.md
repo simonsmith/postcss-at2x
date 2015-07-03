@@ -33,6 +33,11 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
 .logo {
   background: red url('/public/images/logo.png') no-repeat 0 0 at-2x;
 }
+
+.banner {
+  background: url(/public/images/cool.png) at-2x,
+              url(http://example.com/flowers-pattern.jpg) at-2x;
+}
 ```
 
 **Output**
@@ -42,9 +47,19 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
   background: red url('/public/images/logo.png') no-repeat 0 0;
 }
 
+.banner {
+  background: url(/public/images/cool.png),
+              url(http://example.com/flowers-pattern.jpg);
+}
+
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .logo {
     background: red url('/public/images/logo@2x.png') no-repeat 0 0;
+  }
+
+  .banner {
+    background: url(/public/images/cool@2x.png),
+                url(http://example.com/flowers-pattern@2x.jpg);
   }
 }
 ```
@@ -57,6 +72,8 @@ Change the identifier added to retina images, for example `file@2x.png` can be `
 
 ## Differences from rework-at2x
 
-* Supports multiple background images and `background` shorthand with properties. See `test/fixtures/at2x.css` for examples.
+* Supports multiple background images and `background` shorthand with properties. See `test/fixtures/` for examples.
+
+* Retina rules are grouped into one media query where possible
 
 See [PostCSS](https://github.com/postcss/postcss/) docs for examples for your environment.
