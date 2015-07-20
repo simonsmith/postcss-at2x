@@ -17,6 +17,9 @@
               url(/public/images/cool@2x.png),
               url(http://example.com/flowers-pattern@2x.jpg);
   }
+}
+
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
   .multi {
     background-image: url(http://example.com/image.png),

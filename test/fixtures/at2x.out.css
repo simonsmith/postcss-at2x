@@ -31,9 +31,13 @@
     background: red url('/public/images/logo@2x.png') no-repeat 0 0;
     background-size: auto auto;
   }
+}
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .user {
     background-image: url('/public/images/site@2x.png');
   }
+}
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .user {
     background: transparent url('/public/images/site@2x.png') repeat 0 0;
   }

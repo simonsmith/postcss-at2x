@@ -1,16 +1,13 @@
-/**
- * Retina scoped to media query
- */
-@media (min-width: 200px), (max-width: 400px) {
-  .scoped {
-    background-image: url('/public/images/logo.png') at-2x;
+.Logo {
+  background-image: url("../images/logo-1.png") at-2x;
+}
+
+@media (min-width: 600px) {
+  .Logo {
+    background-image: url("../images/logo-2.png") at-2x;
   }
 }
 
-.user {
-  background-image: url('/public/images/site.png') at-2x;
-}
-
-.test {
-  background-image: url('/public/images/site.png') at-2x;
+.Logo {
+  background-image: url("../images/logo-3.png") at-2x;
 }
