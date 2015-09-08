@@ -1,6 +1,6 @@
 {
   "name": "postcss-at2x",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Adds at-2x keyword to background and background-image declarations to add retina support for images.",
   "keywords": [
     "postcss",
