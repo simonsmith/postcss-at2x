@@ -12,7 +12,7 @@ function test(input, output, opts, done) {
   input = readFixture(`${input}`);
   output = readFixture(`${output}`);
 
-  postcss([ plugin(opts) ]).process(input).then((result) => {
+  postcss([plugin(opts)]).process(input).then((result) => {
     expect(result.css).to.eql(output);
     expect(result.warnings()).to.be.empty;
     done();

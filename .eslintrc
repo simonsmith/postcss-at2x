@@ -1,24 +1,15 @@
 {
+  "extends": "airbnb/base",
   "rules": {
-    "no-unused-expressions": [0],
-    "no-underscore-dangle":  [0],
-    "no-multi-spaces":       [0],
-    "no-extra-parens":       [2],
-    "no-unused-vars":        [2],
-    "no-use-before-define":  [0],
-    "no-loop-func":          [0],
-    "key-spacing":           [0],
-    "strict":                [0],
-    "indent":                [0],
-    "quotes":                [2, "single", "avoid-escape"],
-    "curly":                 [0]
-  },
-  "ecmaFeatures": {
-    "blockBindings": true,
-    "modules": true,
-    "destructuring": true,
-    "arrowFunctions": true,
-    "templateStrings": true
+    "vars-on-top": 0,
+    "comma-dangle": [2, "never"],
+    "func-names": 0,
+    "one-var": [2, { uninitialized: "always", initialized: "never" }],
+    "no-param-reassign": [0],
+    "no-use-before-define": [2, "nofunc"],
+    "no-cond-assign": [2, "except-parens"],
+    "space-before-function-paren": 0,
+    "object-curly-spacing": 0
   },
   "env": {
     "mocha": true,
