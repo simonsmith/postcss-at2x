@@ -32,7 +32,7 @@
   },
   "scripts": {
     "lint": "eslint lib/index.js test/test.js",
-    "build": "babel lib/index.js --out-file build/index.js",
+    "build": "babel lib --out-dir build",
     "test": "npm run lint && mocha --compilers js:babel-register",
     "prepublish": "npm run build"
   }
