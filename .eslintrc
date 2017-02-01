@@ -1,15 +1,16 @@
 {
-  "extends": "airbnb/base",
+  "extends": "airbnb",
   "rules": {
-    "vars-on-top": 0,
-    "comma-dangle": [2, "never"],
+    "block-spacing": ["error", "never"],
+    "comma-dangle": ["error", "always-multiline"],
     "func-names": 0,
-    "one-var": [2, { uninitialized: "always", initialized: "never" }],
+    "no-cond-assign": [2, "except-parens"],
     "no-param-reassign": [0],
     "no-use-before-define": [2, "nofunc"],
-    "no-cond-assign": [2, "except-parens"],
+    "object-curly-spacing": ["error", "never"],
+    "one-var": [2, { "uninitialized": "always", "initialized": "never" }],
     "space-before-function-paren": 0,
-    "object-curly-spacing": 0
+    "vars-on-top": 0
   },
   "env": {
     "mocha": true,

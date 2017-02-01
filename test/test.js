@@ -1,8 +1,8 @@
 import postcss from 'postcss';
-import { expect } from 'chai';
-import plugin from '../lib/';
+import {expect} from 'chai';
 import fs from 'fs';
 import path from 'path';
+import plugin from '../lib/';
 
 function readFixture(filename) {
   return fs.readFileSync(path.join('test/fixtures', filename), 'utf-8');
@@ -29,7 +29,7 @@ describe('postcss-at2x', () => {
   });
 
   it('should allow a custom identifier for retina file names', (done) => {
-    test('identifier.css', 'identifier.out.css', { identifier: '-retina'}, done);
+    test('identifier.css', 'identifier.out.css', {identifier: '-retina'}, done);
   });
 
   it('should allow mulitple background images to be replaced', (done) => {
