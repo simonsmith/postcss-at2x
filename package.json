@@ -36,7 +36,7 @@
   "scripts": {
     "lint": "eslint lib/index.js test/test.js",
     "build": "babel lib --out-dir build",
-    "test": "npm run lint && mocha --compilers js:babel-register",
+    "test": "mocha --compilers js:babel-register && npm run lint",
     "prepublish": "npm run build"
   }
 }
