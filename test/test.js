@@ -35,4 +35,8 @@ describe('postcss-at2x', () => {
   it('should allow mulitple background images to be replaced', (done) => {
     test('multibg.css', 'multibg.out.css', {}, done);
   });
+
+  it('should process image and add background size', (done) => {
+    test('read-background-size.css', 'read-background-size.out.css', {readBackgroundSize: true}, done);
+  });
 });
