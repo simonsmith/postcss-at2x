@@ -29,18 +29,18 @@ exports[`postcss-at2x should add device-pixel-ratio rules 1`] = `
 .avatar {
   background-image: url('/public/images/site.png');
 }
-@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .logo {
     background: red url('/public/images/logo@2x.png') no-repeat 0 0;
     background-size: auto auto;
   }
 }
-@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .user {
     background-image: url('/public/images/site@2x.png');
   }
 }
-@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .user {
     background: transparent url('/public/images/site@2x.png') repeat 0 0;
   }
@@ -52,7 +52,7 @@ exports[`postcss-at2x should allow a custom identifier for retina file names 1`]
 ".user {
   background-image: url('/public/images/site.png');
 }
-@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .user {
     background-image: url('/public/images/site-retina.png');
   }
@@ -73,7 +73,7 @@ exports[`postcss-at2x should allow mulitple background images to be replaced 1`]
                     url(/public/images/cool.png);
 }
 
-@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
   .multi {
     background: url(http://example.com/image.png),
@@ -82,7 +82,7 @@ exports[`postcss-at2x should allow mulitple background images to be replaced 1`]
   }
 }
 
-@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
   .multi {
     background-image: url(http://example.com/image.png),
@@ -108,21 +108,21 @@ exports[`postcss-at2x should allow retina image scoped to media query 1`] = `
   background-image: url(\\"../images/logo-3.png\\");
 }
 
-@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
   .Logo {
     background-image: url(\\"../images/logo-1@2x.png\\");
   }
 }
 
-@media (min-width: 600px) and (min--moz-device-pixel-ratio: 1.5), (min-width: 600px) and (-o-min-device-pixel-ratio: 3/2), (min-width: 600px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 600px) and (min-device-pixel-ratio: 1.5), (min-width: 600px) and (min-resolution: 144dpi), (min-width: 600px) and (min-resolution: 1.5dppx) {
+@media (min-width: 600px) and (min-device-pixel-ratio: 1.5), (min-width: 600px) and (min-resolution: 144dpi), (min-width: 600px) and (min-resolution: 1.5dppx) {
 
   .Logo {
     background-image: url(\\"../images/logo-2@2x.png\\");
   }
 }
 
-@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
   .Logo {
     background-image: url(\\"../images/logo-3@2x.png\\");
@@ -135,7 +135,7 @@ exports[`postcss-at2x should process image and add background size 1`] = `
 ".cat {
   background-image: url('./test/fixtures/images/cat.jpg');
 }
-@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .cat {
     background-image: url('./test/fixtures/images/cat@2x.jpg');
     background-size: 200px 286px;
