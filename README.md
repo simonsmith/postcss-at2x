@@ -72,6 +72,11 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
 
 Change the identifier added to retina images, for example `file@2x.png` can be `file-retina.png`.
 
+##### `detectImageSize` (default: `false`) _boolean_
+
+Obtains the image dimensions automatically and applies them to the
+`background-size` property.
+
 ## Differences from rework-at2x
 
 * Supports multiple background images and `background` shorthand with properties. See `test/fixtures/` for examples.

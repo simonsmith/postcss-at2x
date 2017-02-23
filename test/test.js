@@ -37,6 +37,6 @@ describe('postcss-at2x', () => {
   });
 
   it('should process image and add background size', (done) => {
-    test('read-background-size.css', 'read-background-size.out.css', {readBackgroundSize: true}, done);
+    test('read-background-size.css', 'read-background-size.out.css', {detectImageSize: true}, done);
   });
 });
