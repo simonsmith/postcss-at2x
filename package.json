@@ -19,6 +19,7 @@
   "dependencies": {
     "image-size": "^0.5.1",
     "is-url": "^1.2.2",
+    "pify": "^2.3.0",
     "postcss": "^5.0.4",
     "postcss-value-parser": "^3.3.0",
     "string.prototype.includes": "^1.0.0"
