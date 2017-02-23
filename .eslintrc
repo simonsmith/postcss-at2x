@@ -13,7 +13,7 @@
     "vars-on-top": 0
   },
   "env": {
-    "mocha": true,
-    "node":  true
+    "jest": true,
+    "node": true
   }
 }
