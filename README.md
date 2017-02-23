@@ -11,16 +11,16 @@ $ npm install postcss-at2x --save-dev
 ## Usage
 
 ```js
-var fs = require('fs');
-var postcss = require('postcss');
-var at2x = require('postcss-at2x');
+const fs = require('fs');
+const postcss = require('postcss');
+const at2x = require('postcss-at2x');
 
-var css = fs.readFileSync('input.css', 'utf8');
+const input = fs.readFileSync('input.css', 'utf8');
 
-var output = postcss()
+const output = postcss()
   .use(at2x())
-  .process(css)
-  .css;
+  .process(input)
+  .then(result => console.log(result.css));
 ```
 
 ### .at2x()
@@ -52,13 +52,13 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
               url(http://example.com/flowers-pattern.jpg);
 }
 
-@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .logo {
     background: red url('/public/images/logo@2x.png') no-repeat 0 0;
   }
 }
 
-@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .banner {
     background: url(/public/images/cool@2x.png),
                 url(http://example.com/flowers-pattern@2x.jpg);
@@ -74,8 +74,22 @@ Change the identifier added to retina images, for example `file@2x.png` can be `
 
 ##### `detectImageSize` (default: `false`) _boolean_
 
-Obtains the image dimensions automatically and applies them to the
-`background-size` property.
+Obtains the image dimensions of the non-retina image automatically and applies them to the
+`background-size` property of the retina image.
+
+**Output**
+
+```css
+.element {
+  background: url(img.jpg) no-repeat;
+}
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .element {
+    background: url(img@2x.jpg) no-repeat;
+    background-size: 540px 675px; /* Dimensions of img.jpg */
+  }
+}
+```
 
 ## Differences from rework-at2x
 
