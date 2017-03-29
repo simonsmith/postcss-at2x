@@ -77,6 +77,12 @@ Change the identifier added to retina images, for example `file@2x.png` can be `
 Obtains the image dimensions of the non-retina image automatically and applies them to the
 `background-size` property of the retina image.
 
+##### `resolveImagePath` _function_
+
+Get resolved image path for detecting image size. By default, original `url` value is resolved from current working directory (`process.cwd()`).
+
+Function receives two arguments: original `url` value and [PostCSS declaration source](http://api.postcss.org/Declaration.html#source).
+
 **Output**
 
 ```css

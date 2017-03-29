@@ -12,7 +12,7 @@ function runTest(input, opts, done) {
 
   postcss([plugin(opts)]).process(input).then((result) => {
     expect(result.css).toMatchSnapshot();
-    expect(result.warnings()).toBeEmpty();
+    expect(result.warnings()).toHaveLength(0);
     done();
   }).catch(done);
 }
@@ -36,5 +36,23 @@ describe('postcss-at2x', () => {
 
   it('should process image and add background size', (done) => {
     runTest('read-background-size.css', {detectImageSize: true}, done);
+  });
+
+  it('should resolve image path with custom function', (done) => {
+    runTest('resolve-image-path.css', {
+      detectImageSize: true,
+      resolveImagePath: (value, source) => {
+        expect(typeof value).toBe('string');
+        expect(source).toHaveProperty('input.css');
+        return path.resolve(process.cwd(), value);
+      }}, done);
+  });
+
+  it('should have proper arguments for resolve image path function', (done) => {
+    const spy = jest.fn();
+    runTest('resolve-image-path.css', {detectImageSize: true, resolveImagePath: spy}, done);
+    const spyCall = spy.mock.calls[0];
+    expect(spyCall[0]).toEqual('./test/fixtures/images/cat.jpg');
+    expect(spyCall[1]).toMatchSnapshot();
   });
 });
