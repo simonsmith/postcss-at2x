@@ -12,7 +12,7 @@ function runTest(input, opts, done) {
 
   postcss([plugin(opts)]).process(input).then((result) => {
     expect(result.css).toMatchSnapshot();
-    expect(result.warnings()).toHaveLength(0);
+    expect(result.warnings().length).toMatchSnapshot();
     done();
   }).catch(err => done.fail(err));
 }
