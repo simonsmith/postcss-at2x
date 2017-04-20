@@ -1,4 +1,10 @@
 {
-  "presets": ["es2015"],
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": 0.12
+      }
+    }]
+  ],
   "plugins": ["add-module-exports"]
 }
