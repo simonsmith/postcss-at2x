@@ -77,6 +77,11 @@ Change the identifier added to retina images, for example `file@2x.png` can be `
 Obtains the image dimensions of the non-retina image automatically and applies them to the
 `background-size` property of the retina image.
 
+##### `skipMissingRetina` (default: `false`) _boolean_
+
+If the retina image cannot be found on the file system it will be skipped and
+not output into the result CSS.
+
 ##### `resolveImagePath` _function_
 
 Get resolved image path for detecting image size. By default, original `url` value is resolved from current working directory (`process.cwd()`).
