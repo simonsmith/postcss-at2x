@@ -48,6 +48,8 @@ exports[`postcss-at2x should add device-pixel-ratio rules 1`] = `
 "
 `;
 
+exports[`postcss-at2x should add device-pixel-ratio rules 2`] = `0`;
+
 exports[`postcss-at2x should add rule for present retina images when configured to skip missing 1`] = `
 ".bear {
   background-image: url('./test/fixtures/images/bear.jpg');
@@ -60,6 +62,8 @@ exports[`postcss-at2x should add rule for present retina images when configured 
 "
 `;
 
+exports[`postcss-at2x should add rule for present retina images when configured to skip missing 2`] = `0`;
+
 exports[`postcss-at2x should allow a custom identifier for retina file names 1`] = `
 ".user {
   background-image: url('/public/images/site.png');
@@ -71,6 +75,8 @@ exports[`postcss-at2x should allow a custom identifier for retina file names 1`]
 }
 "
 `;
+
+exports[`postcss-at2x should allow a custom identifier for retina file names 2`] = `0`;
 
 exports[`postcss-at2x should allow mulitple background images to be replaced 1`] = `
 ".multi {
@@ -104,6 +110,8 @@ exports[`postcss-at2x should allow mulitple background images to be replaced 1`]
 }
 "
 `;
+
+exports[`postcss-at2x should allow mulitple background images to be replaced 2`] = `0`;
 
 exports[`postcss-at2x should allow retina image scoped to media query 1`] = `
 ".Logo {
@@ -143,6 +151,8 @@ exports[`postcss-at2x should allow retina image scoped to media query 1`] = `
 "
 `;
 
+exports[`postcss-at2x should allow retina image scoped to media query 2`] = `0`;
+
 exports[`postcss-at2x should have proper arguments for resolve image path function 1`] = `
 Object {
   "end": Object {
@@ -154,7 +164,7 @@ Object {
   background-image: url('./test/fixtures/images/cat.jpg') at-2x;
 }
 ",
-    "id": "<input css 7>",
+    "id": "<input css 8>",
   },
   "start": Object {
     "column": 3,
@@ -176,12 +186,30 @@ exports[`postcss-at2x should have proper arguments for resolve image path functi
 "
 `;
 
+exports[`postcss-at2x should have proper arguments for resolve image path function 3`] = `0`;
+
+exports[`postcss-at2x should not add background size when image cannot be found 1`] = `
+".dog {
+  background-image: url('./test/fixtures/images/dog.jpg');
+}
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .dog {
+    background-image: url('./test/fixtures/images/dog@2x.jpg');
+  }
+}
+"
+`;
+
+exports[`postcss-at2x should not add background size when image cannot be found 2`] = `1`;
+
 exports[`postcss-at2x should not add rule for missing retina images when configured to skip missing 1`] = `
 ".cat {
   background-image: url('./test/fixtures/images/cat.jpg');
 }
 "
 `;
+
+exports[`postcss-at2x should not add rule for missing retina images when configured to skip missing 2`] = `0`;
 
 exports[`postcss-at2x should process image and add background size 1`] = `
 ".cat {
@@ -196,6 +224,8 @@ exports[`postcss-at2x should process image and add background size 1`] = `
 "
 `;
 
+exports[`postcss-at2x should process image and add background size 2`] = `0`;
+
 exports[`postcss-at2x should resolve image path with custom function 1`] = `
 ".cat {
   background-image: url('./test/fixtures/images/cat.jpg');
@@ -208,3 +238,5 @@ exports[`postcss-at2x should resolve image path with custom function 1`] = `
 }
 "
 `;
+
+exports[`postcss-at2x should resolve image path with custom function 2`] = `0`;

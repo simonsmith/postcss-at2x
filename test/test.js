@@ -12,7 +12,7 @@ function runTest(input, opts, done) {
 
   postcss([plugin(opts)]).process(input).then((result) => {
     expect(result.css).toMatchSnapshot();
-    expect(result.warnings()).toHaveLength(0);
+    expect(result.warnings().length).toMatchSnapshot();
     done();
   }).catch(err => done.fail(err));
 }
@@ -36,6 +36,10 @@ describe('postcss-at2x', () => {
 
   it('should process image and add background size', (done) => {
     runTest('read-background-size.css', {detectImageSize: true}, done);
+  });
+
+  it('should not add background size when image cannot be found', (done) => {
+    runTest('missing-image.css', {detectImageSize: true}, done);
   });
 
   it('should resolve image path with custom function', (done) => {
