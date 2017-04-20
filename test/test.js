@@ -14,7 +14,7 @@ function runTest(input, opts, done) {
     expect(result.css).toMatchSnapshot();
     expect(result.warnings()).toHaveLength(0);
     done();
-  }).catch(done);
+  }).catch(err => done.fail(err));
 }
 
 describe('postcss-at2x', () => {
@@ -49,7 +49,7 @@ describe('postcss-at2x', () => {
   });
 
   it('should have proper arguments for resolve image path function', (done) => {
-    const spy = jest.fn();
+    const spy = jest.fn(value => value);
     runTest('resolve-image-path.css', {detectImageSize: true, resolveImagePath: spy}, done);
     const spyCall = spy.mock.calls[0];
     expect(spyCall[0]).toEqual('./test/fixtures/images/cat.jpg');
