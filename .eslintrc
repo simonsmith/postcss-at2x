@@ -10,7 +10,7 @@
     "no-use-before-define": [2, "nofunc"],
     "object-curly-spacing": ["error", "never"],
     "one-var": [2, { "uninitialized": "always", "initialized": "never" }],
-    "space-before-function-paren": 0,
+    "space-before-function-paren": [2, "never"],
     "vars-on-top": 0
   },
   "env": {
