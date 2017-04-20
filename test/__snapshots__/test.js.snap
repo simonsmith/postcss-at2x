@@ -142,7 +142,7 @@ Object {
   background-image: url('./test/fixtures/images/cat.jpg') at-2x;
 }
 ",
-    "id": "<input css 7>",
+    "id": "<input css 8>",
   },
   "start": Object {
     "column": 3,
@@ -159,6 +159,18 @@ exports[`postcss-at2x should have proper arguments for resolve image path functi
   .cat {
     background-image: url('./test/fixtures/images/cat@2x.jpg');
     background-size: 200px 286px;
+  }
+}
+"
+`;
+
+exports[`postcss-at2x should not add background size when image cannot be found 1`] = `
+".dog {
+  background-image: url('./test/fixtures/images/dog.jpg');
+}
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .dog {
+    background-image: url('./test/fixtures/images/dog@2x.jpg');
   }
 }
 "

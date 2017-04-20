@@ -38,6 +38,10 @@ describe('postcss-at2x', () => {
     runTest('read-background-size.css', {detectImageSize: true}, done);
   });
 
+  it('should not add background size when image cannot be found', (done) => {
+    runTest('missing-image.css', {detectImageSize: true}, done);
+  });
+
   it('should resolve image path with custom function', (done) => {
     runTest('resolve-image-path.css', {
       detectImageSize: true,
