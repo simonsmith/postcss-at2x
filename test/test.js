@@ -55,4 +55,12 @@ describe('postcss-at2x', () => {
     expect(spyCall[0]).toEqual('./test/fixtures/images/cat.jpg');
     expect(spyCall[1]).toMatchSnapshot();
   });
+
+  it('should not add rule for missing retina images when configured to skip missing', (done) => {
+    runTest('missing-retina.css', {skipMissingRetina: true}, done);
+  });
+
+  it('should add rule for present retina images when configured to skip missing', (done) => {
+    runTest('present-retina.css', {skipMissingRetina: true}, done);
+  });
 });
