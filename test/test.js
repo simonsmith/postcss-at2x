@@ -14,7 +14,7 @@ function runTest(input, opts, done) {
     expect(result.css).toMatchSnapshot();
     expect(result.warnings()).toHaveLength(0);
     done();
-  }).catch(done);
+  }).catch(err => done.fail(err));
 }
 
 describe('postcss-at2x', () => {
