@@ -31,8 +31,7 @@ exports[`postcss-at2x should add device-pixel-ratio rules 1`] = `
 }
 @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .logo {
-    background: red url('/public/images/logo@2x.png') no-repeat 0 0;
-    background-size: auto auto;
+    background-image: url('/public/images/logo@2x.png');
   }
 }
 @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
@@ -42,7 +41,7 @@ exports[`postcss-at2x should add device-pixel-ratio rules 1`] = `
 }
 @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .user {
-    background: transparent url('/public/images/site@2x.png') repeat 0 0;
+    background-image: url('/public/images/site@2x.png');
   }
 }
 "
@@ -94,18 +93,14 @@ exports[`postcss-at2x should allow mulitple background images to be replaced 1`]
 @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
   .multi {
-    background: url(http://example.com/image.png),
-              url(/public/images/cool@2x.png),
-              url(http://example.com/flowers-pattern@2x.jpg);
+    background-image: url(http://example.com/image.png), url(/public/images/cool@2x.png), url(http://example.com/flowers-pattern@2x.jpg);
   }
 }
 
 @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
   .multi {
-    background-image: url(http://example.com/image.png),
-                    linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
-                    url(/public/images/cool@2x.png);
+    background-image: url(http://example.com/image.png), linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)), url(/public/images/cool@2x.png);
   }
 }
 "
