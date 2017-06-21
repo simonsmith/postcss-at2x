@@ -9,3 +9,7 @@
                     linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
                     url(/public/images/cool.png) at-2x;
 }
+
+.multi {
+  background: url(http://example.com/image.png), url(/public/images/cool.png) at-2x, linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)), url(http://example.com/flowers-pattern.jpg) at-2x;
+}
