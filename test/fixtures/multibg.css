@@ -7,6 +7,7 @@
 .multi {
   background-image: url(http://example.com/image.png),
                     linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
+                    green,
                     url(/public/images/cool.png) at-2x;
 }
 
