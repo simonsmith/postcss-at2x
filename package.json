@@ -18,9 +18,9 @@
   "main": "build/index.js",
   "dependencies": {
     "babel-cli": "^6.24.1",
-    "image-size": "^0.5.1",
+    "image-size": "^0.6.0",
     "is-url": "^1.2.2",
-    "pify": "^2.3.0",
+    "pify": "^3.0.0",
     "postcss": "^6.0.6",
     "postcss-value-parser": "^3.3.0",
     "string.prototype.includes": "^1.0.0"
