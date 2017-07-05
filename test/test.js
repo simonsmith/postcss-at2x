@@ -17,7 +17,7 @@ function runTest(input, opts, done) {
   }).catch(err => done.fail(err));
 }
 
-describe('postcss-at2x', () => {
+describe('plugin API', () => {
   it('should add device-pixel-ratio rules', (done) => {
     runTest('at2x.css', {}, done);
   });
@@ -68,3 +68,5 @@ describe('postcss-at2x', () => {
     runTest('present-retina.css', {skipMissingRetina: true}, done);
   });
 });
+
+

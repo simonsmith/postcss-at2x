@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`postcss-at2x should add device-pixel-ratio rules 1`] = `
+exports[`plugin API should add device-pixel-ratio rules 1`] = `
 "/**
  * Multiple background values being set at once
  */
@@ -47,9 +47,9 @@ exports[`postcss-at2x should add device-pixel-ratio rules 1`] = `
 "
 `;
 
-exports[`postcss-at2x should add device-pixel-ratio rules 2`] = `0`;
+exports[`plugin API should add device-pixel-ratio rules 2`] = `0`;
 
-exports[`postcss-at2x should add rule for present retina images when configured to skip missing 1`] = `
+exports[`plugin API should add rule for present retina images when configured to skip missing 1`] = `
 ".bear {
   background-image: url('./test/fixtures/images/bear.jpg');
 }
@@ -61,9 +61,9 @@ exports[`postcss-at2x should add rule for present retina images when configured 
 "
 `;
 
-exports[`postcss-at2x should add rule for present retina images when configured to skip missing 2`] = `0`;
+exports[`plugin API should add rule for present retina images when configured to skip missing 2`] = `0`;
 
-exports[`postcss-at2x should allow a custom identifier for retina file names 1`] = `
+exports[`plugin API should allow a custom identifier for retina file names 1`] = `
 ".user {
   background-image: url('/public/images/site.png');
 }
@@ -75,9 +75,9 @@ exports[`postcss-at2x should allow a custom identifier for retina file names 1`]
 "
 `;
 
-exports[`postcss-at2x should allow a custom identifier for retina file names 2`] = `0`;
+exports[`plugin API should allow a custom identifier for retina file names 2`] = `0`;
 
-exports[`postcss-at2x should allow mulitple background images to be replaced 1`] = `
+exports[`plugin API should allow mulitple background images to be replaced 1`] = `
 ".multi {
   background: url(http://example.com/image.png),
               url(/public/images/cool.png),
@@ -119,9 +119,9 @@ exports[`postcss-at2x should allow mulitple background images to be replaced 1`]
 "
 `;
 
-exports[`postcss-at2x should allow mulitple background images to be replaced 2`] = `0`;
+exports[`plugin API should allow mulitple background images to be replaced 2`] = `0`;
 
-exports[`postcss-at2x should allow retina image scoped to media query 1`] = `
+exports[`plugin API should allow retina image scoped to media query 1`] = `
 ".Logo {
   background-image: url(\\"../images/logo-1.png\\");
 }
@@ -159,9 +159,9 @@ exports[`postcss-at2x should allow retina image scoped to media query 1`] = `
 "
 `;
 
-exports[`postcss-at2x should allow retina image scoped to media query 2`] = `0`;
+exports[`plugin API should allow retina image scoped to media query 2`] = `0`;
 
-exports[`postcss-at2x should have proper arguments for resolve image path function 1`] = `
+exports[`plugin API should have proper arguments for resolve image path function 1`] = `
 Object {
   "end": Object {
     "column": 64,
@@ -181,7 +181,7 @@ Object {
 }
 `;
 
-exports[`postcss-at2x should have proper arguments for resolve image path function 2`] = `
+exports[`plugin API should have proper arguments for resolve image path function 2`] = `
 ".cat {
   background-image: url('./test/fixtures/images/cat.jpg');
 }
@@ -194,9 +194,9 @@ exports[`postcss-at2x should have proper arguments for resolve image path functi
 "
 `;
 
-exports[`postcss-at2x should have proper arguments for resolve image path function 3`] = `0`;
+exports[`plugin API should have proper arguments for resolve image path function 3`] = `0`;
 
-exports[`postcss-at2x should not add background size when image cannot be found 1`] = `
+exports[`plugin API should not add background size when image cannot be found 1`] = `
 ".dog {
   background-image: url('./test/fixtures/images/dog.jpg');
 }
@@ -208,33 +208,18 @@ exports[`postcss-at2x should not add background size when image cannot be found 
 "
 `;
 
-exports[`postcss-at2x should not add background size when image cannot be found 2`] = `1`;
+exports[`plugin API should not add background size when image cannot be found 2`] = `1`;
 
-exports[`postcss-at2x should not add rule for missing retina images when configured to skip missing 1`] = `
+exports[`plugin API should not add rule for missing retina images when configured to skip missing 1`] = `
 ".cat {
   background-image: url('./test/fixtures/images/cat.jpg');
 }
 "
 `;
 
-exports[`postcss-at2x should not add rule for missing retina images when configured to skip missing 2`] = `0`;
+exports[`plugin API should not add rule for missing retina images when configured to skip missing 2`] = `0`;
 
-exports[`postcss-at2x should process image and add background size 1`] = `
-".cat {
-  background-image: url('./test/fixtures/images/cat.jpg');
-}
-@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .cat {
-    background-image: url('./test/fixtures/images/cat@2x.jpg');
-    background-size: 200px 286px;
-  }
-}
-"
-`;
-
-exports[`postcss-at2x should process image and add background size 2`] = `0`;
-
-exports[`postcss-at2x should resolve image path with custom function 1`] = `
+exports[`plugin API should process image and add background size 1`] = `
 ".cat {
   background-image: url('./test/fixtures/images/cat.jpg');
 }
@@ -247,4 +232,19 @@ exports[`postcss-at2x should resolve image path with custom function 1`] = `
 "
 `;
 
-exports[`postcss-at2x should resolve image path with custom function 2`] = `0`;
+exports[`plugin API should process image and add background size 2`] = `0`;
+
+exports[`plugin API should resolve image path with custom function 1`] = `
+".cat {
+  background-image: url('./test/fixtures/images/cat.jpg');
+}
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .cat {
+    background-image: url('./test/fixtures/images/cat@2x.jpg');
+    background-size: 200px 286px;
+  }
+}
+"
+`;
+
+exports[`plugin API should resolve image path with custom function 2`] = `0`;
