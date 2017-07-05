@@ -3,6 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import plugin from '../lib/';
 
+const {__get__: get} = plugin;
+
 function readFixture(filename) {
   return fs.readFileSync(path.join('test/fixtures', filename), 'utf-8');
 }
@@ -69,4 +71,62 @@ describe('plugin API', () => {
   });
 });
 
+describe('count function', () => {
+  const count = get('count');
 
+  it('should return the position of a char in a string', () => {
+    expect(count('hello', 'e')).toEqual(1);
+  });
+});
+
+describe('splitMultipleBackgrounds function', () => {
+  const splitMultipleBackgrounds = get('splitMultipleBackgrounds');
+
+  it('should return an array of background values', () => {
+    const value = 'url(http://example.com/image.png), url(/public/images/cool.png) at-2x, url(http://example.com/flowers-pattern.jpg) at-2x;';
+
+    expect(splitMultipleBackgrounds(value)).toEqual([
+      'url(http://example.com/image.png)',
+      ' url(/public/images/cool.png) at-2x',
+      ' url(http://example.com/flowers-pattern.jpg) at-2x;',
+    ]);
+  });
+});
+
+describe('extractRetinaImage function', () => {
+  const extractRetinaImage = get('extractRetinaImage');
+  const ident = '@2x';
+
+  it('should ignore values that do not have an image', () => {
+    expect(extractRetinaImage(null, 'transparent')).toEqual('transparent');
+  });
+
+  it('should ignore values that are missing an identifier', () => {
+    const value = 'url("images/image.png")';
+    expect(extractRetinaImage(ident, value)).toEqual(value);
+  });
+
+  it('should ignore values have an identifier but no url()', () => {
+    const value = 'transparent at-2x';
+    expect(extractRetinaImage(ident, value)).toEqual(value);
+  });
+
+  it('should ignore svg files', () => {
+    const value = 'url("images/image.svg")';
+    expect(extractRetinaImage(ident, value)).toEqual(value);
+  });
+
+  it('should return a retina version of the image', () => {
+    const value = 'url("images/image.png") at-2x';
+    expect(extractRetinaImage(ident, value)).toEqual('url("images/image@2x.png")');
+  });
+});
+
+describe('createRetinaImages function', () => {
+  const createRetinaImages = get('createRetinaImages');
+
+  it('should return an array of retina images', () => {
+    const value = 'url(http://example.com/image.png), url(/public/images/cool.png) at-2x, url(http://example.com/flowers-pattern.jpg) at-2x;';
+    expect(createRetinaImages(value, '@2x')).toEqual('url(http://example.com/image.png), url(/public/images/cool@2x.png), url(http://example.com/flowers-pattern@2x.jpg)');
+  });
+});
