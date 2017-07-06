@@ -39,7 +39,7 @@
   },
   "scripts": {
     "lint": "eslint lib/index.js test/test.js",
-    "build": "babel lib --out-dir build",
+    "build": "BABEL_ENV=production babel lib --out-dir build",
     "test": "jest && npm run lint",
     "prepublish": "npm run build"
   }

@@ -6,8 +6,12 @@
       }
     }]
   ],
+  "env": {
+    "development": {
+      "plugins": ["rewire"]
+    }
+  },
   "plugins": [
-    "add-module-exports",
-    "rewire"
+    "add-module-exports"
   ]
 }
