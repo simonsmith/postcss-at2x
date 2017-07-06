@@ -31,10 +31,10 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
 
 ```css
 .multi {
-  background-image: url(http://example.com/image.png),
-                    linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
-                    green,
-                    url(/public/images/cool.png) at-2x;
+  background: url(http://example.com/image.png),
+              linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
+              green,
+              url(/public/images/cool.png) at-2x;
 }
 ```
 
@@ -42,17 +42,17 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
 
 ```css
 .multi {
-  background-image: url(http://example.com/image.png),
-                    linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
-                    green,
-                    url(/public/images/cool.png);
+  background: url(http://example.com/image.png),
+              linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
+              green,
+              url(/public/images/cool.png) at-2x;
 }
 
 @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .multi {
     background-image: url(http://example.com/image.png), 
                       linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)), 
-                      green, 
+                      none,
                       url(/public/images/cool@2x.png);
   }
 }

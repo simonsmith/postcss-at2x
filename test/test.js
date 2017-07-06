@@ -98,8 +98,8 @@ describe('extractRetinaImage function', () => {
   const extractRetinaImage = get('extractRetinaImage');
   const ident = '@2x';
 
-  it('should ignore values that do not have an image', () => {
-    expect(extractRetinaImage(null, 'transparent')).toEqual('transparent');
+  it('should return none for non-image values', () => {
+    expect(extractRetinaImage(null, 'transparent')).toEqual('none');
   });
 
   it('should ignore values that are missing an identifier', () => {
@@ -107,9 +107,9 @@ describe('extractRetinaImage function', () => {
     expect(extractRetinaImage(ident, value)).toEqual(value);
   });
 
-  it('should ignore values have an identifier but no url()', () => {
+  it('should return none for non-image values with an identifier', () => {
     const value = 'transparent at-2x';
-    expect(extractRetinaImage(ident, value)).toEqual(value);
+    expect(extractRetinaImage(ident, value)).toEqual('none');
   });
 
   it('should ignore svg files', () => {
