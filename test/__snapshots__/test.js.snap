@@ -79,20 +79,20 @@ exports[`plugin API should allow a custom identifier for retina file names 2`] =
 
 exports[`plugin API should allow mulitple background images to be replaced 1`] = `
 ".multi {
-  background: url(http://example.com/image.png),
-              url(/public/images/cool.png),
-              url(http://example.com/flowers-pattern.jpg);
-}
-
-.multi {
   background-image: url(http://example.com/image.png),
-                    linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
-                    green,
-                    url(/public/images/cool.png);
+                    url(/public/images/cool.png),
+                    url(http://example.com/flowers-pattern.jpg);
 }
 
 .multi {
-  background: url(http://example.com/image.png), url(/public/images/cool.png), linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)), url(http://example.com/flowers-pattern.jpg);
+  background: url(http://example.com/image.png) top left no-repeat,
+              linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)),
+              green,
+              url(/public/images/cool.png) 50% 50%;
+}
+
+.multi {
+  background: url(http://example.com/image.png), url(/public/images/cool.png), linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(http://example.com/flowers-pattern.jpg);
 }
 
 @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
@@ -105,15 +105,14 @@ exports[`plugin API should allow mulitple background images to be replaced 1`] =
 @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
   .multi {
-    background-image: url(http://example.com/image.png), linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)), 
-                    green, url(/public/images/cool@2x.png);
+    background-image: url(http://example.com/image.png), linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), none, url(/public/images/cool@2x.png);
   }
 }
 
 @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
 
   .multi {
-    background-image: url(http://example.com/image.png), url(/public/images/cool@2x.png), linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)), url(http://example.com/flowers-pattern@2x.jpg);
+    background-image: url(http://example.com/image.png), url(/public/images/cool@2x.png), linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(http://example.com/flowers-pattern@2x.jpg);
   }
 }
 "
