@@ -45,7 +45,7 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
   background: url(http://example.com/image.png),
               linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
               green,
-              url(/public/images/cool.png) at-2x;
+              url(/public/images/cool.png);
 }
 
 @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
