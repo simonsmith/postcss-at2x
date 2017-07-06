@@ -30,38 +30,30 @@ Adds `at-2x` keyword to `background` and `background-image` declarations to add 
 **Input**
 
 ```css
-.logo {
-  background: red url('/public/images/logo.png') no-repeat 0 0 at-2x;
-}
-
-.banner {
-  background: url(/public/images/cool.png) at-2x,
-              url(http://example.com/flowers-pattern.jpg) at-2x;
+.multi {
+  background-image: url(http://example.com/image.png),
+                    linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
+                    green,
+                    url(/public/images/cool.png) at-2x;
 }
 ```
 
 **Output**
 
 ```css
-.logo {
-  background: red url('/public/images/logo.png') no-repeat 0 0;
-}
-
-.banner {
-  background: url(/public/images/cool.png),
-              url(http://example.com/flowers-pattern.jpg);
-}
-
-@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .logo {
-    background: red url('/public/images/logo@2x.png') no-repeat 0 0;
-  }
+.multi {
+  background-image: url(http://example.com/image.png),
+                    linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)),
+                    green,
+                    url(/public/images/cool.png);
 }
 
 @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .banner {
-    background: url(/public/images/cool@2x.png),
-                url(http://example.com/flowers-pattern@2x.jpg);
+  .multi {
+    background-image: url(http://example.com/image.png), 
+                      linear-gradient(to right, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1)), 
+                      green, 
+                      url(/public/images/cool@2x.png);
   }
 }
 ```
@@ -94,6 +86,7 @@ Function receives two arguments: original `url` value and [PostCSS declaration s
 .element {
   background: url(img.jpg) no-repeat;
 }
+
 @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .element {
     background: url(img@2x.jpg) no-repeat;
@@ -101,9 +94,5 @@ Function receives two arguments: original `url` value and [PostCSS declaration s
   }
 }
 ```
-
-## Differences from rework-at2x
-
-* Supports multiple background images and `background` shorthand with properties. See `test/fixtures/` for examples.
 
 See [PostCSS](https://github.com/postcss/postcss/) docs for examples for your environment.
