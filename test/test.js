@@ -1,7 +1,12 @@
 import postcss from 'postcss';
 import fs from 'fs';
 import path from 'path';
+import imageSize from 'image-size';
 import plugin from '../lib/';
+
+
+jest.mock('image-size');
+
 
 const {__get__: get} = plugin;
 
@@ -20,6 +25,12 @@ function runTest(input, opts, done) {
 }
 
 describe('plugin API', () => {
+  beforeEach(() => {
+    imageSize.mockImplementation(
+      require.requireActual('image-size')
+    );
+  });
+
   it('should add device-pixel-ratio rules', (done) => {
     runTest('at2x.css', {}, done);
   });
@@ -38,6 +49,20 @@ describe('plugin API', () => {
 
   it('should process image and add background size', (done) => {
     runTest('read-background-size.css', {detectImageSize: true}, done);
+  });
+
+  it('should put rules in the correct order when some size lookups are slow', (done) => {
+    imageSize.mockImplementation((image, callback) => {
+      const actual = require.requireActual('image-size');
+      if (image.indexOf('slow') !== -1) {
+        setTimeout(() => {
+          actual(image, callback);
+        }, 10);
+      } else {
+        actual(image, callback);
+      }
+    });
+    runTest('read-background-size-slow.css', {detectImageSize: true}, done);
   });
 
   it('should not add background size when image cannot be found', (done) => {

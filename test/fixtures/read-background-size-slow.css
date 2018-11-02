@@ -1,0 +1,7 @@
+.cat {
+  background-image: url('./test/fixtures/images/cat-slow.jpg') at-2x;
+}
+
+.cat {
+  background-image: url('./test/fixtures/images/cat.jpg') at-2x;
+}
