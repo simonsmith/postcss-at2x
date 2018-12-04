@@ -171,7 +171,7 @@ Object {
   background-image: url('./test/fixtures/images/cat.jpg') at-2x;
 }
 ",
-    "id": "<input css 8>",
+    "id": "<input css 9>",
   },
   "start": Object {
     "column": 3,
@@ -232,6 +232,35 @@ exports[`plugin API should process image and add background size 1`] = `
 `;
 
 exports[`plugin API should process image and add background size 2`] = `0`;
+
+exports[`plugin API should put rules in the correct order when some size lookups are slow 1`] = `
+".cat {
+  background-image: url('./test/fixtures/images/cat-slow.jpg');
+}
+
+.cat {
+  background-image: url('./test/fixtures/images/cat.jpg');
+}
+
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+
+  .cat {
+    background-image: url('./test/fixtures/images/cat-slow@2x.jpg');
+    background-size: 200px 286px;
+  }
+}
+
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+
+  .cat {
+    background-image: url('./test/fixtures/images/cat@2x.jpg');
+    background-size: 200px 286px;
+  }
+}
+"
+`;
+
+exports[`plugin API should put rules in the correct order when some size lookups are slow 2`] = `0`;
 
 exports[`plugin API should resolve image path with custom function 1`] = `
 ".cat {
