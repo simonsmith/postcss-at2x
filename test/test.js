@@ -17,7 +17,7 @@ function readFixture(filename) {
 function runTest(input, opts, done) {
   input = readFixture(`${input}`);
 
-  postcss([plugin(opts)]).process(input).then((result) => {
+  postcss([plugin(opts)]).process(input, {from: undefined}).then((result) => {
     expect(result.css).toMatchSnapshot();
     expect(result.warnings().length).toMatchSnapshot();
     done();
@@ -83,6 +83,7 @@ describe('plugin API', () => {
     const spy = jest.fn(value => value);
     runTest('resolve-image-path.css', {detectImageSize: true, resolveImagePath: spy}, done);
     const spyCall = spy.mock.calls[0];
+    delete spyCall[1].input.id;
     expect(spyCall[0]).toEqual('./test/fixtures/images/cat.jpg');
     expect(spyCall[1]).toMatchSnapshot();
   });

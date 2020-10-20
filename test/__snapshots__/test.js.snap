@@ -165,17 +165,20 @@ Object {
   "end": Object {
     "column": 64,
     "line": 2,
+    "offset": 70,
   },
   "input": Input {
     "css": ".cat {
   background-image: url('./test/fixtures/images/cat.jpg') at-2x;
 }
 ",
-    "id": "<input css 9>",
+    "fromOffset": [Function],
+    "hasBOM": false,
   },
   "start": Object {
     "column": 3,
     "line": 2,
+    "offset": 9,
   },
 }
 `;

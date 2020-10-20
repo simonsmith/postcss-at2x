@@ -21,7 +21,6 @@
     "image-size": "^0.6.0",
     "is-url": "^1.2.2",
     "pify": "^3.0.0",
-    "postcss": "^6.0.6",
     "postcss-value-parser": "^3.3.0",
     "string.prototype.includes": "^1.0.0"
   },
@@ -35,7 +34,11 @@
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
     "jest": "^20.0.4",
-    "jshint-stylish": "^2.2.1"
+    "jshint-stylish": "^2.2.1",
+    "postcss": "^8.1.2"
+  },
+  "peerDependencies": {
+    "postcss": "^8.1.2"
   },
   "scripts": {
     "lint": "eslint lib/index.js test/test.js",
