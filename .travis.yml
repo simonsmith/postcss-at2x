@@ -4,5 +4,4 @@ env:
   - NODE_ENV=development
 node_js:
   - stable
-  - "6"
-  - "4"
+  - "12"
